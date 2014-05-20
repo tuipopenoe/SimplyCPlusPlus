@@ -37,9 +37,8 @@ float calculateInterest(float principal, float rate, int years){
 
 void printGrowth(float principal, float rate){
     cout << left << setw(10) << "Rate (%)" << "Amount after 10 years" << endl;
-    for(int i = 5; i <= 10; i++){
-        rate = static_cast<float>(i / 100);
-        cout << "Rate: " << rate << endl;
+    for(float i = 5; i <= 10; i++){
+        rate = (i / 100);
         cout << left << setw(10) << i << "$";
         cout << calculateInterest(principal, rate, 10) << endl;
     }

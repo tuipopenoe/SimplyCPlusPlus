@@ -3,6 +3,8 @@
 
 #include <iostream>
 #include <string>
+#include <sstream>
+#include <iomanip>
 
 using namespace std;
 
@@ -16,18 +18,23 @@ int main(){
     char type;
     string input;
     string strtemp;
+    stringstream ss;
+
     cout << "Enter temperature to convert: ";
     getline(cin, input);
     strtemp = input.substr(0, 4);
-    temp = stof(strtemp);
+    ss << strtemp;
+    ss >> temp;
     type = input.at(4);
 
     cout << "Converted temperature is ";
     if(type == 'F'){
-        cout << convertToCelsius(temp) << " degrees Celsius" << endl;
+        cout << fixed << setprecision(2) << convertToCelsius(temp) <<
+            " degrees Celsius" << endl;
     }
     else{
-        cout << convertToFarenheit(temp) << " degrees Farenheit" << endl;
+        cout << fixed << setprecision(2) << convertToFarenheit(temp) <<
+            " degrees Farenheit" << endl;
     }
     return 0;
 }

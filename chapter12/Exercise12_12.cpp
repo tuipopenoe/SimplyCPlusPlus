@@ -7,21 +7,17 @@
 
 using namespace std;
 
+int rollDie();
 
+void printStats(int frequency[], int count);
 
 int main(){
 
     int times;
     int roll;
+    int count =0;
 
-    int one;
-    int two;
-    int three;
-    int four;
-    int five;
-    int six;
-
-    enum Sides {ONE=1, TWO, THREE, FOUR, FIVE, SIX};
+    int frequency [6] = {};
 
     srand(time(0));
 
@@ -30,29 +26,37 @@ int main(){
     for(int i = 0; i < times; i++){
         cout << "Roll: " << i << endl;
         cout << "------------" << endl;
-        roll = rollDice();
+        roll = rollDie();
+        count++;
         cout << "Die 1: " << "Die 2: " << endl;
         cout << roll << "\t";
-        roll == ONE ? one++: ;
-        roll == TWO ? two++: ;
-        roll == THREE ? three++: ;
-        roll == FOUR ? four++: ;
-        roll == FIVE ? five++: ;
-        roll == SIX ? six++: ;
-        roll = rollDice();
-        roll == ONE ? one++: ;
-        roll == TWO ? two++: ;
-        roll == THREE ? three++: ;
-        roll == FOUR ? four++: ;
-        roll == FIVE ? five++: ;
-        roll == SIX ? six++: ;
+        frequency[roll-1]++;
+        roll = rollDie();
+        count++;
         cout << roll << endl << endl;
+        frequency[roll-1]++;
     }
 
-    cout << "Statistical Information: " << endl;
-    for(int i = 0; i < 6; i++){
-        cout << "Frequency for side " << Sides(i) <<
-    }
+    printStats(frequency, count);
 
     return 0;
+}
+
+int rollDie(){
+    return 1 + rand() % 6;
+}
+
+void printStats(int frequency[], int count){
+    cout << "Statistical Information: "<< endl;
+    for(int i=1; i <= 6; i++){
+        cout << "Frequency for side ";
+        i == 1 ? cout << "one: " : "";
+        i == 2 ? cout << "two: " : "";
+        i == 3 ? cout << "three: " : "";
+        i == 4 ? cout << "four: " : "";
+        i == 5 ? cout << "five: " : "";
+        i == 6 ? cout << "six: " : "";
+        cout << frequency[i -1] << endl;
+    }
+    cout << "Total dice rolled: " << count << endl;
 }

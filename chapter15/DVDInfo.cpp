@@ -40,3 +40,5 @@ void DVDInfo::setMovieLength(double lengthValue){
         movieLength = 0;
     }
 }
+
+BonusInfo

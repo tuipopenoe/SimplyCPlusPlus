@@ -3,9 +3,10 @@
 
 #ifndef SHOPPINGITEM_H
 #define SHOPPINGITEM_H
-#endif
 
 #include <string>
+
+using namespace std;
 
 class ShoppingItem{
     public:
@@ -25,4 +26,6 @@ class ShoppingItem{
         string name;
         int quantity;
         ShoppingItem *next;
-}
+};
+
+#endif

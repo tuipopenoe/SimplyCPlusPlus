@@ -3,7 +3,8 @@
 
 #ifndef LIST_H
 #define LIST_H
-#endif
+
+#include "ShoppingItem.h"
 
 class List{
     public:
@@ -17,5 +18,7 @@ class List{
         void deleteList();
 
     private:
-        ShoppingItem *firstItem;
+        ShoppingItem *head;
 };
+
+#endif

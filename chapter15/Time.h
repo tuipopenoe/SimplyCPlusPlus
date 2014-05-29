@@ -3,7 +3,6 @@
 
 #ifndef TIME_H
 #define TIME_H
-#endif
 
 class Time{
     public:
@@ -25,3 +24,5 @@ class Time{
         int minute;
         int second;
 };
+
+#endif

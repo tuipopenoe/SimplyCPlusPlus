@@ -6,7 +6,7 @@
 
 class Queue{
     public:
-        Queue:
+        Queue():
 
         void setHead(Node *)
         Node *getHead();
@@ -15,7 +15,7 @@ class Queue{
 
         void addItem(string, int);
         void displayQueue();
-        void displayQueue();
+        void deleteQueue();
 
     private:
         Node *head;

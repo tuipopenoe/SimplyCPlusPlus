@@ -28,22 +28,22 @@ void Queue::setTail(Node *newTail){
     tail = newTail;
 }
 
-void Queue::addItem(string itemName){
-    Node *newItem = new Node(name);
+void Queue::addNode(string& nodeName){
+    Node *newNode = new Node(nodeName);
 
-    newItem->setNextItem(getTail());
-    setTail(newItem);
+    newNode->setNextItem(getTail());
+    setTail(newNode);
 }
 
-void Queue::displayQueue(){
-    Node *currentItem = getTail();
+void Queue::displayNextNode(){
+    Node *currentNode = getTail();
 
     cout << "BakeryQueue" << endl;
     cout << "-----------" << endl;
 
     while(currentItem != 0){
-        currentItem->display();
-        currentItem = currentItem.getNextItem();
+        currentNode->display();
+        currentNode = currentNode.getNextItem();
     }
 }
 

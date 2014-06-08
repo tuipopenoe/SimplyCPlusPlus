@@ -8,9 +8,21 @@ using namespace std;
 
 Node::Node(string &customerName, Node *nextPointer){
     setName(customerName);
-    setNextItem(nextPointer);
+    setNextNode(nextPointer);
 }
 
 void Node::setName(string &customerName){
-    name
+    name = customerName;
+}
+
+string Node::getName(){
+    return name;
+}
+
+void Node::setNextNode(Node *nextPointer){
+    next = nextPointer;
+}
+
+Node *Node::getNextNode(){
+    return next;
 }

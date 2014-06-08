@@ -4,17 +4,19 @@
 #ifndef QUEUE_H
 #define QUEUE_H
 
+#include "Node.h"
+
 class Queue{
     public:
-        Queue():
+        Queue();
 
-        void setHead(Node *)
+        void setHead(Node *);
         Node *getHead();
-        void setTail(Node *)
+        void setTail(Node *);
         Node *getTail();
 
-        void addItem(string, int);
-        void displayQueue();
+        void addNode(string);
+        void displayNextNode();
         void deleteQueue();
 
     private:
@@ -22,3 +24,4 @@ class Queue{
         Node *tail;
 };
 
+#endif

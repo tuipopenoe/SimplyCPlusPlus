@@ -13,14 +13,16 @@ class Node{
         Node(string &, Node *);
 
         void setName(string &);
-        void setNextItem(Node *);
+        void setNextNode(Node *);
 
         string getName();
-        Node *getNextitem();
+        Node *getNextNode();
 
         void display();
 
     private:
         string name;
         Node *next;
-}
+};
+
+#endif

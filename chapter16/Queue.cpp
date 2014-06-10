@@ -28,22 +28,31 @@ void Queue::setTail(Node *newTail){
     tail = newTail;
 }
 
-void Queue::addNode(string& nodeName){
-    Node *newNode = new Node(nodeName);
+void Queue::addNode(string nodeName){
+    Node *newNode = new Node(nodeName, 0);
 
-    newNode->setNextItem(getTail());
+    newNode->setNextNode(getTail());
     setTail(newNode);
 }
 
 void Queue::displayNextNode(){
     Node *currentNode = getTail();
+    Node *tempNode;
 
-    cout << "BakeryQueue" << endl;
+    cout << "\nBakeryQueue" << endl;
     cout << "-----------" << endl;
 
-    while(currentItem != 0){
-        currentNode->display();
-        currentNode = currentNode.getNextItem();
+    currentNode->display();
+    tempNode = currentNode;
+    if(currentNode != 0){
+        currentNode = currentNode->getNextNode();
+        if(currentNode != 0){
+            setTail(currentNode);
+            delete tempNode;
+        }
+    }
+    else{
+
     }
 }
 
@@ -51,7 +60,7 @@ void Queue::deleteQueue(){
     Node *currentItem = getTail();
 
     while(currentItem != 0){
-        Node *nextItem = currentItem->getNextItem();
+        Node *nextItem = currentItem->getNextNode();
         cout<<"\nMemory being released for: " << currentItem->getName() <<
             endl;
 

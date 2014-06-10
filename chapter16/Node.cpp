@@ -26,3 +26,7 @@ void Node::setNextNode(Node *nextPointer){
 Node *Node::getNextNode(){
     return next;
 }
+
+void Node::display(){
+    cout << "\nNext Customer: " << getName() << endl;
+}

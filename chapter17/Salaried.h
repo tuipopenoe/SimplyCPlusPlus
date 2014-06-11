@@ -13,7 +13,8 @@ class SalariedEmployee : public Employee{
         void setWeeklySalary(double);
         double getWeeklySalary();
 
-        void print();
+        virtual double earnings();
+        virtual void print();
 
     private:
         double weeklySalary;

@@ -1,8 +1,8 @@
 // Tui Popenoe
 // Employee.h
 
-ifndef EMPLOYEE_H
-define EMPLOYEE_H
+#ifndef EMPLOYEE_H
+#define EMPLOYEE_H
 
 #include <string>
 
@@ -21,7 +21,8 @@ class Employee{
         void setSocialSecurityNumber(string &);
         string getSocialSecurityNumber();
 
-        void print();
+        virtual double earnings() = 0;
+        virtual void print();
 
     private:
         string firstName;

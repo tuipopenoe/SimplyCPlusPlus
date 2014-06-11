@@ -22,7 +22,35 @@ ShoppingItem *List::getHead(){
 void List::addItem(string itemName, int quantity){
     ShoppingItem *newItem = new ShoppingItem(itemName, quantity, 0);
 
-    newItem->setNextItem(getHead());
+    if(getHead() == 0){
+        setHead(newItem);
+    }
+    else{
+        ShoppingItem *currentItem = getHead();
+
+        if((newItem->getName()) < (currentItem->getName())){
+            setHead(newItem);
+            newItem->setNextItem(currentItem);
+        }
+        else{
+            while(currentItem->getNextItem() != 0){
+                if((newItem->getName()) <
+                    (currentItem->getNextItem()->getName())){
+
+                    newItem->setNextItem(currentItem->getNextItem());
+                    currentItem->setNextItem(newItem);
+                }
+
+                currentItem = currentItem->getNextItem();
+
+                return;
+            }
+            currentItem->setNextItem(newItem);
+        }
+    }
+
+
+
     setHead(newItem);
 }
 

@@ -12,6 +12,21 @@ Queue::Queue(){
     setTail(0);
 }
 
+int Queue::length(){
+    int count = 0;
+    if(getHead() == 0){
+        return 0;
+    }
+    else{
+        Node *currentNode = getHead();
+        while(currentNode->getNextNode() != 0){
+            count++;
+            currentNode = currentNode->getNextNode();
+        }
+    }
+    return count;
+}
+
 Node *Queue::getHead(){
     return head;
 }

@@ -10,6 +10,7 @@ class Queue{
     public:
         Queue();
 
+        int length();
         void setHead(Node *);
         Node *getHead();
         void setTail(Node *);

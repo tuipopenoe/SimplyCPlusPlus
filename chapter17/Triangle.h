@@ -20,7 +20,6 @@ class Triangle : public Shape{
         double getSideThree();
 
         virtual double calcArea();
-        virtual string getType();
         virtual void print();
 
     private:

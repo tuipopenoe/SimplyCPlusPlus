@@ -14,7 +14,6 @@ class Shape{
         int getNumSides();
 
         virtual double calcArea() = 0;
-        virtual string getType();
         virtual void print();
 
     private:

@@ -40,13 +40,10 @@ void Triangle::setSideThree(int length){
 
 double Triangle::calcArea(){
     double p = (getSideOne() + getSideTwo() + getSideThree()) / 2;
-    return sqrt(p * (p - sideOne) * (p - sideTwo) * (p - sideThree));
-}
-
-string Triangle::getType(){
-    return "triangle";
+    return sqrt(p * (p - getSideOne()) * (p - getSideTwo()) *
+        (p - getSideThree()));
 }
 
 void Triangle::print(){
-    cout <<
+    cout << "The area of the triangle is: " + calcArea();
 }

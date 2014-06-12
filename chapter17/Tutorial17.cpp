@@ -8,6 +8,7 @@
 #include "Salaried.h"
 #include "Commission.h"
 #include "Hourly.h"
+#include "Piece.h"
 
 using namespace std;
 
@@ -116,6 +117,18 @@ int createEmployee(Employee *employees[], int index){
 
             employees[index] = new HourlyEmployee(firstName, lastName, SSN,
                 hourlyWage, hours);
+            break;
+        case 4:
+            double pieceRate;
+            double piecesMade;
+
+            cout << "\nEnter piece rate: ";
+            cin >> pieceRate;
+            cout << "Enter pieces made: ";
+            cin >> piecesMade;
+
+            employees[index] = new PieceWorkerEmployee(firstName, lastName,
+                SSN, pieceRate, piecesMade);
             break;
         default:
             cout << "Error: You must select a valid employee type." << endl;

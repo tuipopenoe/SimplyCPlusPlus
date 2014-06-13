@@ -1,6 +1,11 @@
 // Tui Popenoe
 // TicketInformation.cpp
 
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <cstdlib>
+
 using namespace std;
 
 int getDate();
@@ -46,7 +51,7 @@ void displayEvent(int date){
 
     ifstream calendarFile("calendar.txt");
 
-    if(! calenderFile){
+    if(!calendarFile){
         cout << "Error: File could not be opened." << endl;
         exit(1);
     }

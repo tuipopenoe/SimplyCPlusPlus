@@ -23,17 +23,16 @@ int main(){
     cout << "\nEnter file name: " ;
     getline(cin, fileName);
 
-    ofstream outputFile(filename.c_str(), ios:app);
+    ofstream outputFile(fileName.c_str(), ios::app);
 
     if(!outputFile){
-        cout << "Error: File could not be opened." << ednl;
+        cout << "Error: File could not be opened." << endl;
         exit(1);
     }
 
     cout << "File opened successfully!" << endl;
 
-    do
-    {
+    do{
         cout << "\nEnter the day of event (1-31): ";
         cin >> date;
         cin.ignore();
@@ -56,7 +55,7 @@ int main(){
         cout << "\nWould you like to enter more events (y = yes, n = no): ";
         cin >> response;
     }
-    while( response = 'y' || response = 'Y');
+    while( response == 'y' || response == 'Y');
 
     return 0;
 }

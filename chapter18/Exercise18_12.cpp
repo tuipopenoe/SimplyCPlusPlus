@@ -9,14 +9,13 @@
 
 using namespace std;
 
-string decryptData(string, string, *char);
+string decryptData(string, string);
 
 int main(){
     string fileName;
     string outputFile;
     string output;
     string data;
-    char *currentChar;
 
     cout << "\nEnter encrypted file name: ";
     getline(cin, fileName);
@@ -31,25 +30,26 @@ int main(){
         exit(1);
     }
 
-    if(!outputFile){
+    ofstream out(outputFile.c_str(), ios::app);
+
+    if(!out){
         cout << "Error: No output file." << endl;
         exit(1);
     }
 
     while(!input.eof()){
         getline(input, data);
-        output = decryptData(data, output, *currentChar);
+        output = decryptData(data, output);
     }
-
-    ofstream out(outputFile.c_str());
 
     cout << "Data decrypted successfully!" << endl;
 }
 
-string decryptData(string data, string output, *currentChar){
+string decryptData(string data, string output){
+    char currentChar;
     for(int i = 0; i < data.size(); i++){
-        currentChar = data.charAt(i);
-        &currentChar += 15;
+        currentChar = data[i];
+        currentChar += 15;
         output += currentChar;
     }
 }

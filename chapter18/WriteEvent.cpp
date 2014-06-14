@@ -50,7 +50,7 @@ int main(){
         getline(cin, description);
 
         outputFile << date << endl << time << "\n$" << price << endl <<
-            eventName << endl << description << "\n";
+            eventName << endl << description << endl;
 
         cout << "\nWould you like to enter more events (y = yes, n = no): ";
         cin >> response;

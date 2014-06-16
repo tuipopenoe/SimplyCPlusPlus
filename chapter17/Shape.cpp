@@ -19,5 +19,5 @@ void Shape::setNumSides(int sides){
 }
 
 void Shape::print(){
-    cout << "The area of the " + getType() + " is: " + calcArea();
+
 }

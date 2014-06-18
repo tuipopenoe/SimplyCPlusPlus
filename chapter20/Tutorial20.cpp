@@ -51,3 +51,28 @@ int main(){
 
     return 0;
 }
+
+void processData(int price, int downPayment, double interest){
+    int loanAmount = price - downPayment;
+    double monthlyInterest = interest / 1200;
+
+    cout << fixed << setprecision(2);
+
+    cout << endl << left << setw(10) << "Months" << "Monthly Payments" << endl;
+
+    for(int years = 2; years <= 5; years++){
+        int months = 12 * years;
+
+        double monthlyPayment = calculateMonthlyPayment(monthlyInterest, 
+            months, loanAmount);
+
+        cout << left << setw(10) << months << "$" << monthlyPayment << endl;
+    }
+}
+
+double calculateMonthlyPayment(double monthlyInterest, int months, 
+    int loanAmount){
+    double base = pow(1 + monthlyInterest, months);
+
+    return loanAmount * monthlyInterest / (1 - (1/base));
+}

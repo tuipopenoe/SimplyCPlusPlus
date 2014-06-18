@@ -1,11 +1,11 @@
 // Tui Popenoe
 // Exceptions.cpp
-#include <exception>
+#include <stdexcept>
 
 using namespace std;
 
-class DivideByZeroException : public exception{
+class DivideByZeroException : public runtime_error{
     public:
-        DivideByZeroException::DivideByZeroException() :
-            exception("Attempt to divide by zero"){}
+        DivideByZeroException() :
+            runtime_error("Attempt to divide by zero"){}
 };
